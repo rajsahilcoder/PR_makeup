@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+        nav{
+            background: linear-gradient(-45deg, #dff89a,#dd749c,#82bace,#ac76df);
+        }
+    </style>
+
+    <title>{% block title %}
+
+        {% endblock title %}</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <b>Products</b>
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/templates/AIDS.html">Bridal</a></li>
+                            <li><a class="dropdown-item" href="#">CSE</a></li>
+                            <li><a class="dropdown-item" href="#">ISE</a></li>
+                            <li><a class="dropdown-item" href="#">ECE</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/templates/bookings.html">Booking</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/templates/review.html">Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/templates/Gallery_Trending.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/templates/QnA.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Logout</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <b>More</b>
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Anything</a></li>
+                            <li><a class="dropdown-item" href="#"></a></li>
+
+                        </ul>
+                    </li>
+
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/templates/about.html">About Us!</a>
+                    </li>
+            </div>
+        </div>
+    </nav>
+
+    {% block body %}
+
+    {% endblock body %}
+    <footer>
+        <div class="content">
+            <div class="left box">
+                <!-- <div class="upper">
+                    <div class="topic">About us</div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque numquam praesentium hic at
+                        tempora labore ipsa, impedit repellat dolor animi voluptatem et debitis!</p>
+                </div> -->
+                <div >
+                    <div class="topic">Contact us</div>
+                    <div class="phone">
+                        <a href="#"><i class="fas fa-phone-volume"></i>12321312</a>
+                    </div>
+                    <div class="email">
+                        <a href="#"><i class="fas fa-envelope"></i>abc@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="middle box">
+                <div class="topic">Our Services</div>
+                <div><a href="#">MakeUo</a></div>
+                <div><a href="#">Hair Studio</a></div>
+            </div>
+            <div class="right box">
+                <div class="topic">Subscribe us</div>
+                <form action="#">
+                    <div class="media-icons">
+                        <a href="#"><img src="{{ url_for('static', filename='fb.png') }}" alt="Facebook"
+                                height="40px" width="40px"></a>
+                        <a href="#"><img src="{{ url_for('static', filename='insta.jpg') }}" alt="Instagram"
+                            height="40px" width="40px"></a>
+                        <a href="#"><img src="{{ url_for('static', filename='twit.png') }}" alt="Twitter"
+                            height="40px" width="40px"></a>
+                        <a href="#"><img src="{{ url_for('static', filename='youtube.jpg') }}" alt="Youtube"
+                            height="40px" width="40px"></a>
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="bottom">
+            <p>Copyright © 2020 <br> <a href="#">P.R. Makeup and Hair Studio</a> <br> All rights reserved</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}
+
+        {% endblock title %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+</head>
+
+<body>
+    
+    <section>
+        <header>
+            <a href="/" class="logo"> P.R.</a>
+            <div class="toggle" onclick="toggleMenu();"></div>
+            <ul class="navigation">
+                <li><a href="/" style="--i:1;">Home</a></li>
+                <li><a href="/templates/bookings.html" style="--i:2;">Bookings</a></li>
+                <li><a href="#" style="--i:2;">Review</a></li>
+                <li><a href="#" style="--i:3;">Products</a></li>
+                <li><a href="/templates/Gallery_Trending.html" style="--i:4;">Gallery</a></li>
+                <li><a href="#" style="--i:5;">Login</a></li>
+                <li><a href="#" style="--i:5;">Logout</a></li>
+            </ul>
+        </header>
+        {% block body %}
+
+        {% endblock body %}
+        <footer>
+            <div class="content">
+                <div class="left box">
+                    <!-- <div class="upper">
+                        <div class="topic">About us</div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque numquam praesentium hic at
+                            tempora labore ipsa, impedit repellat dolor animi voluptatem et debitis!</p>
+                    </div> -->
+                    <div >
+                        <div class="topic">Contact us</div>
+                        <div class="phone">
+                            <a href="#"><i class="fas fa-phone-volume"></i>12321312</a>
+                        </div>
+                        <div class="email">
+                            <a href="#"><i class="fas fa-envelope"></i>abc@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="middle box">
+                    <div class="topic">Our Services</div>
+                    <div><a href="#">MakeUo</a></div>
+                    <div><a href="#">Hair Studio</a></div>
+                </div>
+                <div class="right box">
+                    <div class="topic">Subscribe us</div>
+                    <form action="#">
+                        <div class="media-icons">
+                            <a href="#"><img src="{{ url_for('static', filename='fb.png') }}" alt="Facebook"
+                                    height="40px" width="40px"></a>
+                            <a href="#"><img src="{{ url_for('static', filename='insta.jpg') }}" alt="Instagram"
+                                height="40px" width="40px"></a>
+                            <a href="#"><img src="{{ url_for('static', filename='twit.png') }}" alt="Twitter"
+                                height="40px" width="40px"></a>
+                            <a href="#"><img src="{{ url_for('static', filename='youtube.jpg') }}" alt="Youtube"
+                                height="40px" width="40px"></a>
+                            
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="bottom">
+                <p>Copyright © 2020 <br> <a href="#">P.R. Makeup and Hair Studio</a> <br> All rights reserved</p>
+            </div>
+        </footer>
+    </section>
+    <script>
+        let imgBx = document.querySelectorAll('.imgBx');
+        imgBx.forEach(popup => popup.addEventListener('click', () => {
+            popup.classList.toggle('active')
+        }))
+    
+        function toggleMenu() {
+            var menuToggle = document.querySelector('.toggle');
+            var navigation = document.querySelector('.navigation');
+            menuToggle.classList.toggle('active');
+            navigation.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

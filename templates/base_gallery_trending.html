@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}
+
+        {% endblock title %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+</head>
+
+<body>
+    <section>
+        <header>
+            <a href="/" class="logo"> P.R.</a>
+            <div class="toggle" onclick="toggleMenu();"></div>
+            <ul class="navigation">
+                <li><a href="/templates/Gallery_Bridal.html" style="--i:1;">Bridal Makeup </a></li>
+                <li><a href="/templates/Gallery_engagement.html" style="--i:2;">Engegment Makeup</a></li>
+                <li><a href="/templates/Gallery_reception.html" style="--i:2;">Reception Makeup</a></li>
+                <li><a href="/templates/Gallery_ocasionally.html" style="--i:3;">Occasionally Makeup</a></li>
+            </ul>
+        </header>
+        {% block body %}
+
+        {% endblock body %}
+        
+    </section>
+    <script>
+        let imgBx = document.querySelectorAll('.imgBx');
+        imgBx.forEach(popup => popup.addEventListener('click', () => {
+            popup.classList.toggle('active')
+        }))
+    
+        function toggleMenu() {
+            var menuToggle = document.querySelector('.toggle');
+            var navigation = document.querySelector('.navigation');
+            menuToggle.classList.toggle('active');
+            navigation.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

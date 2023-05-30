@@ -1,0 +1,69 @@
+{% extends 'base2.html' %}
+{% block title %}
+Review
+  
+{% endblock title %}
+
+{% block body %}
+
+
+  <div class = "contain my-3">
+  
+    <form action ="/templates/review.html" method ="POST">
+      <div class="contain mb-3">
+        <label for="title" class="form-label">Your Name</label>
+        <input type="text" id ="title" class = "form-control" name ="title">
+        
+      </div>
+      <div class="contain-fluid mb-3">
+        <label for="desc" class="form-label">Please submit your review!</label>
+        <input type="text" class="form-control" id="desc" name ="desc">
+      </div>
+      
+      <button type="submit" class="btn btn-outline-danger">Submit</button>
+    </form>
+    </div>
+
+<section>    
+    <div class = "contain-fluid my-3">
+      <h1> </h1>
+        {% if allqna|length == 0 %}
+        <div class = "alert alert-dark" role = "alert">
+          No  Yet!
+    
+        </div>
+          
+        {% else %}
+        <table class="table table-dark table-striped">
+          <thead>
+            <tr>
+              <th scope="col">SNo</th>
+              <th scope="col">Name</th>
+              <th scope="col">Question</th>
+              <th scope="col">Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for qna in allqna %}
+              
+            <!-- add a cond if approved by admin-true then add table row -->
+            <tr>
+              <th scope="row">{{loop.index}}</th>
+              <td>{{qna.title}}</td>
+              <td>{{qna.desc}}</td>
+              <td>{{qna.date_created}}</td>
+            </tr>
+           
+      
+            {% endfor %}
+          </tbody>
+        </table>
+          
+        {% endif %}
+    
+    
+      
+    </div>
+
+</section>
+{% endblock body %}
